@@ -1,0 +1,14 @@
+{
+    "[typescriptreact]": {
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.formatOnSave": true
+    },
+    "path-autocomplete.includeExtension": true,
+    "path-autocomplete.pathMappings": {
+        "$root": "${folder}/src"
+    },
+    "autocomplete"
+}
