@@ -6,9 +6,10 @@
         "editor.suggest.insertMode": "replace",
         "editor.formatOnSave": true
     },
+    "typescript.suggest.autoImports": true,
     "path-autocomplete.includeExtension": true,
     "path-autocomplete.pathMappings": {
         "$root": "${folder}/src"
     },
-    "autocomplete"
+    
 }

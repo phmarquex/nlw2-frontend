@@ -1,4 +1,5 @@
 import React from 'react'
+import api from 'services/api'
 
 // Icons
 import whatsAppIcon from 'assets/images/icons/whatsapp.svg'
@@ -7,6 +8,7 @@ import whatsAppIcon from 'assets/images/icons/whatsapp.svg'
 import './style.css'
 
 interface PageArticleProps {
+  id: number
   img: string
   alt: string
   teacher: string
@@ -16,6 +18,17 @@ interface PageArticleProps {
 }
 
 const PageArticle: React.FC<PageArticleProps> = props => {
+  async function createNewConnection(user_id: number) {
+    try {
+      const data = { user_id }
+      const { status } = (await api.post('/connections', data)).data
+
+      if (status) alert('Sucesso!')
+    } catch (error) {
+      alert('Ocorreu um erro!')
+    }
+  }
+
   return (
     <main>
       <article className="teacher-item">
@@ -33,7 +46,7 @@ const PageArticle: React.FC<PageArticleProps> = props => {
             Preço/Hora
             <strong>R$ {props.price}</strong>
           </p>
-          <button type="button">
+          <button type="button" onClick={() => createNewConnection(props.id)}>
             <img src={whatsAppIcon} alt="Whatsapp" />
             Entrar em contato
           </button>
